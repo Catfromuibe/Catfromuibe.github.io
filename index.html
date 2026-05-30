@@ -1,146 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name</title>
 
-  <style>
-    body {
-      max-width: 760px;
-      margin: 40px auto;
-      padding: 0 20px;
-      font-family: Georgia, "Times New Roman", serif;
-      color: #111;
-      line-height: 1.6;
-      background: #fff;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  display: flex;
+  background: #ffffff;
+  color: #222;
+}
 
-    h1 {
-      font-size: 32px;
-      margin-bottom: 5px;
-    }
+/* LEFT SIDEBAR */
+.sidebar {
+  width: 300px;
+  background: #2f2f2f;
+  color: white;
+  min-height: 100vh;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  position: fixed;
+}
 
-    h2 {
-      margin-top: 40px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 5px;
-    }
+.sidebar img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 20px;
+  border: 3px solid #ccc;
+}
 
-    p {
-      margin: 10px 0;
-    }
+.sidebar h1 {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 26px;
+}
 
-    a {
-      color: #000;
-      text-decoration: none;
-    }
+.sidebar p {
+  text-align: center;
+  font-size: 14px;
+  margin: 6px 0;
+  color: #ddd;
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
+.sidebar .info {
+  margin-top: 15px;
+  font-size: 14px;
+  line-height: 1.6;
+}
 
-    .header {
-      margin-bottom: 20px;
-    }
+.sidebar .buttons {
+  margin: 20px 0;
+  text-align: center;
+}
 
-    .links a {
-      margin-right: 10px;
-    }
+.sidebar .buttons a {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 14px;
+  background: #ff5c8a;
+  color: white;
+  border-radius: 20px;
+  font-size: 13px;
+  text-decoration: none;
+}
 
-    ul {
-      padding-left: 20px;
-    }
+.sidebar nav {
+  margin-top: 30px;
+}
 
-    li {
-      margin-bottom: 15px;
-    }
+.sidebar nav a {
+  display: block;
+  color: #ddd;
+  text-decoration: none;
+  margin: 8px 0;
+}
 
-    .name-bold {
-      font-weight: bold;
-    }
+.sidebar nav a:hover {
+  color: white;
+}
 
-  </style>
+/* RIGHT CONTENT */
+.content {
+  margin-left: 320px;
+  padding: 40px;
+  max-width: 800px;
+}
+
+h2 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.news-box {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.news-item {
+  margin-bottom: 10px;
+}
+
+</style>
 </head>
 
 <body>
 
-  <div class="header">
-    <h1>Your Name</h1>
-    <p>PhD Student, Your University</p>
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <img src="your_photo.jpg" alt="profile">
 
-    <div class="links">
-      <a href="mailto:your_email@example.com">Email</a> |
-      <a href="#">Google Scholar</a> |
-      <a href="#">GitHub</a> |
-      <a href="#">CV</a>
-    </div>
+  <h1>Your Name</h1>
+  <p>PhD Student</p>
+  <p>Your University</p>
+
+  <div class="info">
+    📍 City, Country<br>
+    📧 your_email@example.com
   </div>
 
-  <h2>About</h2>
+  <div class="buttons">
+    <a href="#">CV (EN)</a>
+    <a href="#">CV (中文)</a>
+  </div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#news">News</a>
+    <a href="#publications">Publications</a>
+    <a href="#projects">Projects</a>
+  </nav>
+</div>
+
+
+<!-- MAIN CONTENT -->
+<div class="content">
+
+  <h2 id="about">About</h2>
   <p>
-    I am a researcher working on machine learning, graph neural networks, and molecular modeling. My research focuses on developing data augmentation techniques and knowledge-guided learning frameworks.
+    I am a PhD student working on machine learning, graph neural networks, and large language models. My research focuses on data-centric AI and knowledge-guided learning.
   </p>
 
   <p>
-    I am currently a PhD student at Your University, advised by Prof. XXX.
+    I am currently studying at Your University. Previously, I received my bachelor's degree in computer science.
   </p>
 
 
-  <h2>Research Interests</h2>
-  <ul>
-    <li>Graph Neural Networks</li>
-    <li>Molecular Machine Learning</li>
-    <li>Data Augmentation</li>
-    <li>AI for Science</li>
-  </ul>
+  <h2 id="news">News</h2>
+  <div class="news-box">
+    <div class="news-item">2026.04 — One paper accepted by ACL 2026 🎉</div>
+    <div class="news-item">2026.01 — One paper accepted by ICLR 2026 🎉</div>
+    <div class="news-item">2025.11 — Joined MSRA as Research Intern</div>
+  </div>
 
 
-  <h2>Publications</h2>
+  <h2 id="publications">Publications</h2>
   <ul>
     <li>
-      <b>Paper Title One</b><br>
-      Author A, <span class="name-bold">Your Name</span>, Author C<br>
-      Conference Name, 2025<br>
-      [<a href="#">paper</a>] [<a href="#">code</a>]
-    </li>
-
-    <li>
-      <b>Paper Title Two</b><br>
-      <span class="name-bold">Your Name</span>, Author B, Author C<br>
-      Journal Name, 2024<br>
-      [<a href="#">paper</a>]
+      <b>Paper Title</b><br>
+      Author A, <b>Your Name</b>, Author C<br>
+      Conference, 2025
     </li>
   </ul>
 
 
-  <h2>Projects</h2>
+  <h2 id="projects">Projects</h2>
   <ul>
     <li>
       <b>Project Name</b><br>
-      Short description of the project. What it does, why it matters.<br>
-      [<a href="#">project page</a>] [<a href="#">code</a>]
+      Short description of your project.
     </li>
   </ul>
 
-
-  <h2>Awards</h2>
-  <ul>
-    <li>Best Paper Award, Conference XYZ, 2025</li>
-    <li>Scholarship Name, 2023</li>
-  </ul>
-
-
-  <h2>Service</h2>
-  <ul>
-    <li>Reviewer: NeurIPS, ICML</li>
-  </ul>
-
-
-  <h2>Misc</h2>
-  <p>
-    You can write anything here, such as teaching experience, hobbies, or links to blog posts.
-  </p>
+</div>
 
 </body>
 </html>
