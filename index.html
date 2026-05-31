@@ -1,44 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xuanting Fan</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Xuanting Fan | 个人学术主页</title>
 <style>
-body { margin:0; font-family: Georgia, "Times New Roman", serif; display:flex; background:#ffffff; color:#222; }
-.sidebar { width:300px; background:#2b2b2b; color:white; min-height:100vh; padding:30px 20px; box-sizing:border-box; position:fixed; }
-.avatar { width:150px; height:150px; border-radius:50%; object-fit:cover; display:block; margin:0 auto 20px; border:4px solid #bbb; }
-.name { text-align:center; font-size:26px; margin-bottom:5px; }
-.subtitle { text-align:center; font-size:14px; color:#ddd; margin-bottom:8px; }
-.info { text-align:center; font-size:14px; color:#ddd; line-height:1.6; }
-.buttons { margin:20px 0; text-align:center; }
-.btn { display:inline-block; margin:6px; padding:8px 16px; background:#ff5c8a; color:white; border-radius:20px; font-size:13px; text-decoration:none; }
-.nav { margin-top:30px; }
-.nav a { display:block; color:#ccc; text-decoration:none; margin:10px 0; font-size:15px; }
-.nav a:hover { color:#ff5c8a; }
-.content { margin-left:320px; padding:40px; max-width:820px; }
-h2 { border-bottom:1px solid #ddd; padding-bottom:6px; }
-.news-box { background:#f3f3f3; padding:15px; border-radius:10px; max-height:170px; overflow-y:auto; }
-.news-item { margin-bottom:8px; }
-ul { padding-left:20px; }
-li { margin-bottom:12px; }
-.highlight { font-weight:bold; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background: #ffffff;
+    color: #1e2a3e;
+    line-height: 1.5;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    width: 300px;
+    background: #2b2b2b;
+    color: #f0f0f0;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 35px 20px 40px 20px;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.05);
+    z-index: 10;
+    overflow-y: auto;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 18px;
+    border: 4px solid #e0c3a8;
+    background: #f4ede4;
+}
+
+.name {
+    text-align: center;
+    font-size: 27px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color: white;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #d4cdc0;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.info {
+    text-align: center;
+    font-size: 13.5px;
+    color: #ddd2c2;
+    line-height: 1.6;
+    margin-top: 5px;
+}
+
+.buttons {
+    margin: 22px 0 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 7px 18px;
+    background: #ff5c8a;
+    color: white;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    background: #e04b77;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.nav {
+    margin-top: 30px;
+    border-top: 1px solid #4a4a4a;
+    padding-top: 18px;
+}
+
+.nav a {
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    margin: 12px 0;
+    font-size: 15px;
+    transition: 0.2s;
+    padding-left: 8px;
+}
+
+.nav a:hover {
+    color: #ff8bab;
+    transform: translateX(3px);
+}
+
+/* 右侧主要内容区域 */
+.content {
+    margin-left: 320px;
+    padding: 45px 50px 70px 50px;
+    max-width: 1000px;
+    background: white;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 500;
+    border-bottom: 2px solid #ffd1df;
+    padding-bottom: 8px;
+    margin: 32px 0 18px 0;
+    color: #2c3e4e;
+}
+
+h2:first-of-type {
+    margin-top: 0;
+}
+
+.highlight {
+    font-weight: 700;
+    color: #c03b5c;
+}
+
+p {
+    margin-bottom: 14px;
+    font-size: 16px;
+    text-align: justify;
+}
+
+/* 新闻框 */
+.news-box {
+    background: #faf6f0;
+    padding: 18px 20px;
+    border-radius: 16px;
+    max-height: 200px;
+    overflow-y: auto;
+    border-left: 5px solid #ff5c8a;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+}
+
+.news-item {
+    margin-bottom: 12px;
+    font-size: 15px;
+    border-bottom: 1px dashed #eee1d0;
+    padding-bottom: 8px;
+}
+.news-item:last-child {
+    border-bottom: none;
+}
+
+ul {
+    padding-left: 1.6rem;
+    list-style-type: square;
+}
+li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+/* 小响应 */
+@media (max-width: 780px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        min-height: auto;
+        padding: 20px;
+    }
+    .content {
+        margin-left: 0;
+        padding: 30px 20px;
+    }
+    .avatar {
+        width: 110px;
+        height: 110px;
+    }
+    .name {
+        font-size: 24px;
+    }
+    .nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+    }
+    .nav a {
+        display: inline-block;
+        margin: 0;
+        padding: 4px 12px;
+        background: #3a3a3a;
+        border-radius: 30px;
+        font-size: 13px;
+    }
+    .buttons {
+        gap: 12px;
+    }
+}
 </style>
 </head>
-
 <body>
 
 <div class="sidebar">
-  <img class="avatar" src="./picture/my_picture.jpg">
+  <img class="avatar" src="./picture/my_picture.jpg" alt="Xuanting Fan portrait" onerror="this.src='https://via.placeholder.com/150?text=Photo';">
   <div class="name">Xuanting Fan</div>
   <div class="subtitle">M.S. @ Wuhan University</div>
   <div class="subtitle">GNNs · LLMs · Acoustic AI</div>
-  <div class="info">📍 China<br>✉️ fan_01@foxmail.com<br>📞 (+86)15907529492</div>
+  <div class="info">📍 China<br>✉️ fan_01@foxmail.com<br>📞 (+86) 15907529492</div>
 
   <div class="buttons">
-    <a class="btn" href="#">CV (EN)</a>
-    <a class="btn" href="https://github.com/Catfromuibe/Catfromuibe.github.io/blob/main/xuanting_cv_cn.pdf">CV (中文)</a>
+    <!-- CV按钮：点击自动下载对应CV文件  英文CV（占位/可配置） 中文CV（真实raw下载）-->
+    <a class="btn" id="btn-cv-en">CV (EN)</a>
+    <a class="btn" id="btn-cn-pdf">CV (中文)</a>
   </div>
 
   <div class="nav">
@@ -79,10 +276,10 @@ My research focuses on Graph Neural Networks (GNNs), Large Language Models (LLMs
   <li><b>UIBE</b>, B.E. in Information Management and Information Systems, 2022–2026</li>
 </ul>
 
-<h2 id="other experience">Academic Experience</h2>
+<h2 id="experience">Academic Experience</h2>
 <ul>
   <li>2024.09 – 2025.03, <b>Nankai University</b>, School of Mathematical Sciences, Computational & Information Science</li>
-  <li>2022.09 – 2023.10, <b>UIBE</b>, School of Foreign Languages, Germany</li>
+  <li>2022.09 – 2023.10, <b>UIBE</b>, School of Foreign Languages, Germany (Exchange Research Assistant)</li>
 </ul>
 
 <h2 id="publications">Publications</h2>
@@ -135,5 +332,180 @@ My research focuses on Graph Neural Networks (GNNs), Large Language Models (LLMs
 
 </div>
 
+<script>
+(function() {
+    // ---------- 下载通用函数 ----------
+    // 通过 Blob + 动态链接 实现跨域/本地文件自动下载
+    async function downloadFromUrl(url, filename, fallbackMessage = "下载失败，请检查网络或稍后重试") {
+        try {
+            // 处理相对路径或同源绝对路径
+            const response = await fetch(url, {
+                mode: 'cors',        // 允许跨域资源 (GitHub raw 支持 CORS)
+                cache: 'no-cache'
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
+            const blob = await response.blob();
+            // 创建对象URL并触发下载
+            const blobUrl = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = blobUrl;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(blobUrl);
+        } catch (error) {
+            console.error('下载异常:', error);
+            alert(`${fallbackMessage}\n${error.message || '资源不可达'}`);
+        }
+    }
+
+    // 创建纯文本占位下载 (用于英文CV暂缺时的优雅降级，但保留可配置真实链接)
+    function downloadPlaceholderText(filename, content) {
+        const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+        const blobUrl = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = blobUrl;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(blobUrl);
+    }
+
+    // ---------- 配置区 ----------
+    // 英文CV真实下载链接 (如果有实际pdf，请将下面链接替换为真实pdf地址，即可自动下载)
+    // 目前因未提供正式英文PDF，提供占位说明 + 可配置提醒，点击会下载提示文本文件，并告知后期替换方式
+    // 若需要直接下载已有英文CV，请修改 EN_CV_URL 为实际文件链接，并将 USE_EN_PLACEHOLDER 设为 false.
+    const EN_CV_URL = "";   // 暂时为空，代表未配置真实pdf。若后续有真实链接可填，例如 './files/xuanting_cv_en.pdf'
+    const USE_EN_PLACEHOLDER = true;   // 当没有真实链接时，采用友好占位下载（文本提示）
+    
+    // 中文CV的准确RAW下载链接 (从原GitHub blob转换为raw，确保直接下载)
+    // 原链接: https://github.com/Catfromuibe/Catfromuibe.github.io/blob/main/xuanting_cv_cn.pdf
+    // raw 地址: https://raw.githubusercontent.com/Catfromuibe/Catfromuibe.github.io/main/xuanting_cv_cn.pdf
+    const CN_CV_URL = "https://raw.githubusercontent.com/Catfromuibe/Catfromuibe.github.io/main/xuanting_cv_cn.pdf";
+    const CN_FILENAME = "Xuanting_Fan_CV_中文.pdf";
+    
+    // 英文占位文件内容 (友好提醒)
+    const enPlaceholderContent = `Xuanting Fan - English Curriculum Vitae (Placeholder)
+
+Dear Recruiter / Colleague,
+
+Thank you for your interest. 
+
+The official English version of my CV is under preparation. 
+Currently, please refer to the Chinese CV for detailed background, publication list, and academic experience.
+
+For any urgent inquiries, feel free to contact me directly:
+📧 fan_01@foxmail.com
+
+--- Technical details ---
+[Automatic download from academic homepage] 
+You can replace this placeholder file with the actual "Xuanting_Fan_CV_EN.pdf" once available.
+
+Best regards,
+Xuanting Fan
+`;
+    
+    // ---------- 按钮绑定事件 ----------
+    const btnEn = document.getElementById('btn-cv-en');
+    const btnCn = document.getElementById('btn-cn-pdf');
+
+    // 英文CV处理 (自动下载 — 支持真实链接或占位)
+    if (btnEn) {
+        btnEn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            // 若已配置有效URL且不使用占位模式 -> 真实下载
+            if (!USE_EN_PLACEHOLDER && EN_CV_URL && EN_CV_URL.trim() !== "") {
+                // 从URL提取文件名，若没有则使用默认英文名
+                let filename = EN_CV_URL.split('/').pop();
+                if (!filename || filename === "") filename = "Xuanting_Fan_CV_EN.pdf";
+                await downloadFromUrl(EN_CV_URL, filename, "英文CV下载失败，请检查链接有效性");
+            } 
+            else {
+                // 降级占位: 生成提示文本文件并自动下载 (不依赖网络)
+                // 同时避免用户误认为下载错误, 友好提示后续替换方式
+                const placeholderFilename = "Xuanting_Fan_CV_EN_placeholder.txt";
+                downloadPlaceholderText(placeholderFilename, enPlaceholderContent);
+                // 可选额外弹窗提示（一次性，不干扰自动下载）
+                setTimeout(() => {
+                    alert("📄 英文CV占位文件已下载（.txt）。\n如需真实英文简历，请将文件替换为正式PDF并更新网页中的EN_CV_URL链接。");
+                }, 100);
+            }
+        });
+    }
+
+    // 中文CV处理 —— 从GitHub raw 自动下载 PDF
+    if (btnCn) {
+        btnCn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            // 直接使用 fetch + blob 实现跨域自动下载
+            try {
+                // 显示简单加载状态 (非必须但提升体验)
+                const originalText = btnCn.innerText;
+                btnCn.innerText = "⏳ 下载中...";
+                btnCn.style.opacity = "0.7";
+                
+                await downloadFromUrl(CN_CV_URL, CN_FILENAME, "中文CV下载失败，请检查网络或稍后重试。");
+                
+                // 恢复按钮文字
+                setTimeout(() => {
+                    btnCn.innerText = originalText;
+                    btnCn.style.opacity = "1";
+                }, 800);
+            } catch (err) {
+                btnCn.innerText = "CV (中文)";
+                btnCn.style.opacity = "1";
+                console.error(err);
+                // 二次降级: 使用备用链接（若raw下载失败，提供原github页面引导，但不自动跳转，只提醒）
+                const useBackup = confirm("从服务器直接下载失败，是否打开GitHub页面手动下载？\n（点击确定将跳转至原始文件页面，您可右键保存）");
+                if (useBackup) {
+                    window.open("https://github.com/Catfromuibe/Catfromuibe.github.io/blob/main/xuanting_cv_cn.pdf", "_blank");
+                }
+            }
+        });
+    }
+    
+    // 可选: 平滑滚动处理(保持锚点行为友好，但原有a标签没有破坏)
+    document.querySelectorAll('.nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId.startsWith('#')) {
+                e.preventDefault();
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    });
+    
+    // 侧边栏头像图片容错: 若图片加载失败，使用优雅字符占位（style已预留）
+    const avatarImg = document.querySelector('.avatar');
+    if (avatarImg) {
+        avatarImg.addEventListener('error', () => {
+            avatarImg.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle fill='%23d4c3aa' cx='50' cy='50' r='45'/%3E%3Ctext x='50' y='67' font-size='40' text-anchor='middle' fill='%23553c2a'%3E📷%3C/text%3E%3C/svg%3E";
+            avatarImg.style.background = "#ebe2d4";
+        });
+    }
+    
+    // 预检查中文CV资源是否可访问 (可选静默ping, 不干扰用户体验)
+    // 仅仅在控制台输出信息帮助debug
+    if (typeof fetch !== 'undefined') {
+        fetch(CN_CV_URL, { method: 'HEAD', mode: 'cors' })
+            .then(resp => {
+                if (resp.ok) console.log("✅ 中文CV资源在线，可自动下载");
+                else console.warn("⚠️ 中文CV资源返回状态", resp.status);
+            })
+            .catch(e => console.warn("中文CV资源预检失败，但仍可尝试下载", e));
+    }
+    
+    // 额外针对原按钮旧式链接取消任何默认跳转（确保不会因为旧href导致页面刷新）
+    // 注意：html中两个btn已经去掉了原有href属性（改为id驱动，无跳转风险）
+    // 为了彻底安全，移除所有可能残留的默认行为
+})();
+</script>
 </body>
 </html>
